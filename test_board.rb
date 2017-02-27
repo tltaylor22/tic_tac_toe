@@ -33,6 +33,9 @@ class TestTicTacToe < Minitest::Test
 		board.ttt_board = ['X', '0', '', '0', '', '', '', '', '']
 		assert_equal(true, board.valid_position?(6))
 		assert_equal(false, board.valid_position?(0))
+		assert_equal(false, board.valid_position?(15))
+		assert_equal(true, board.valid_position?(-3)) # this is the third from the last position so it is open
+
 	end
 	
 
