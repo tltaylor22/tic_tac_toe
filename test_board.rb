@@ -31,11 +31,22 @@ class TestTicTacToe < Minitest::Test
 	def test_check_if_position_is_available
 		board = Board.new
 		board.ttt_board = ['X', '0', '', '0', '', '', '', '', '']
-		assert_equal(true, board.valid_position?(6))
+		assert_equal(true, board.valid_position?(6)) # board.'anything' gives you access to the Board class
 		assert_equal(false, board.valid_position?(0))
 		assert_equal(false, board.valid_position?(15))
 		assert_equal(true, board.valid_position?(-3)) # this is the third from the last position so it is open
+	end
 
+	def test_for_full_board_false
+		board = Board.new
+		board.ttt_board = ['X', '0', 'X', '0', 'X', 'O', 'X', '', 'X']
+		assert_equal(false, board.full_board?)
+	end
+
+	def test_for_full_board_true
+		board = Board.new
+		board.ttt_board = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
+		assert_equal(true, board.full_board?)
 	end
 	
 
