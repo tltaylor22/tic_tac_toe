@@ -11,7 +11,7 @@ game.get_move
 
 game.update_position
 
-game.create_board
+game.display_board
 
 game.change_player
 
@@ -19,14 +19,14 @@ game.get_move
 
 game.update_position
 
-game.create_board
+game.display_board
 
 until game.check_winner || game.check_tie
 
-	game.create_board
+	game.display_board
 	game.get_move
 	game.update_position
 	game.change_player
 end
 
-game.create_board
+

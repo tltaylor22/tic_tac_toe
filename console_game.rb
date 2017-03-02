@@ -4,7 +4,7 @@ require_relative 'sequential_ai.rb'
 
 class Console_Game
 
-	attr_accessor :board, :p1, :p2
+	attr_accessor :board, :p1, :p2, :active_player
 
 	def initialize(p1, p2)
 		@p1 = p1
