@@ -13,4 +13,9 @@ class TestRandomAIFunction < Minitest::Test
 		assert_equal(0, random_ai_player.get_move(['', 'X', 'X', 'X', 'X', 'X', 'X', 'X', 'X']))
 	end
 
+	def test_return_available_position_true
+		random_ai_player = Random_AI.new('X')
+		assert_equal(true, [0, 1, 2].include?(random_ai_player.get_move(['', '', '', 'X', 'X', 'X', 'X', 'X', 'X'])))
+	end
+
 end
