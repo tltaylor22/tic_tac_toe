@@ -26,7 +26,7 @@ class Board
 		end
 	end
 
-	def full_board?
+	def full_board?()
 		if ttt_board.include?('') #if there is an empty string/position false, if not true
 			false
 		else
