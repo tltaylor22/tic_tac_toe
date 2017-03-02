@@ -14,13 +14,13 @@ class TestSequentialAIFunction < Minitest::Test
 	end
 
 	def test_return_available_position_true
-		ai_player = Random_AI.new('X')
+		ai_player = Sequential_AI.new('X')
 		assert_equal(true, [0, 1, 2].include?(ai_player.get_move(['', '', '', 'X', 'X', 'X', 'X', 'X', 'X'])))
 	end
 
 	def test_return_empty_board_true
-		ai_player = Random_AI.new('X')
-		assert_equal(true, [0, 1, 2].include?(ai_player.get_move(['', '', '', '', '', '', '', '', ''])))
+		ai_player = Sequential_AI.new('X')
+		assert_equal(true, [0, 1, 2, 3, 4, 5, 6, 7, 8].include?(ai_player.get_move(['', '', '', '', '', '', '', '', ''])))
 	end
 
 end
