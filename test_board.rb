@@ -1,7 +1,7 @@
 require 'minitest/autorun'
 require_relative 'board.rb'
 
-class TestTicTacToe < Minitest::Test
+class TestTicTacToeFunction < Minitest::Test
 
 	def test_new_board
 		board = Board.new
@@ -48,7 +48,7 @@ class TestTicTacToe < Minitest::Test
 		board.ttt_board = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X']
 		assert_equal(true, board.full_board?)
 	end
-
+# left here in class
 	def test_valid_input
 		board = Board.new
 		assert_equal(false, board.valid_input?('m'))
