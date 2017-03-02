@@ -6,5 +6,9 @@ class Sequential_AI
 		@marker = marker
 	end
 
+	def get_move(board)
+		board.each_index.select{ |empty| board[empty]==''}.sample
+	end
+
 
 end
