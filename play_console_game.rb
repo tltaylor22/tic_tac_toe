@@ -21,12 +21,11 @@ game.update_position
 
 game.display_board
 
-until game.check_winner || game.check_tie
-
+until game.check_tie || game.check_winner
 	game.display_board
 	game.get_move
 	game.update_position
 	game.change_player
 end
 
-
+	game.display_board

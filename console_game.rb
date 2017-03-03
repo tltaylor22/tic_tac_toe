@@ -45,9 +45,11 @@ class Console_Game
 		end
 		active_player
 	end
-
+# take a look at ur check_winner function in the _console.rb. We were only passing in the active player but it needs to check both players for a win. So instead of only passing in the active player, doing an if and an elsif statement for both the player 1 marker and player 2 marker fixed my problem. 
 	def check_winner
-		if board.winner?(active_player.marker)
+		if board.winner?(p1.marker)
+			true
+		elsif board.winner?(p2.marker)
 			true
 		else
 			false
