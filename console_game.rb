@@ -50,20 +50,20 @@ class Console_Game
 	def check_winner
 		if board.winner?(p1.marker)
 			true
-			print 'Congratulations Winner'
+			puts 'Congratulations Winner'
 		elsif board.winner?(p2.marker)
 			true
-			print 'Congratulations Winner'
+			puts 'Congratulations Winner'
 		else
 			false
-			print 'Play on!'
+			puts 'Play on!'
 		end
 	end
 
 	def check_tie
 		if board.full_board?()
 			true
-			print 'Cat game!'
+			puts 'Cat game!'
 		else
 			false
 		end
