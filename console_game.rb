@@ -50,10 +50,13 @@ class Console_Game
 	def check_winner
 		if board.winner?(p1.marker)
 			true
+			print 'Congratulations Winner'
 		elsif board.winner?(p2.marker)
 			true
+			print 'Congratulations Winner'
 		else
 			false
+			print 'Play on!'
 		end
 	end
 
