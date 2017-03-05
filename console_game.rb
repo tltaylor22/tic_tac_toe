@@ -63,6 +63,7 @@ class Console_Game
 	def check_tie
 		if board.full_board?()
 			true
+			print 'Cat game!'
 		else
 			false
 		end
