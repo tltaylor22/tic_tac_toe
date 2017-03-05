@@ -1,9 +1,9 @@
 require_relative 'console_game.rb' # this file will combine all the classes/functions and launch the game.
 
-p1 = Sequential_AI.new('X')
-p2 = Random_AI.new('O')
-# p1 = Human.new('X')
-# p2 = Human.new('O')
+# p1 = Sequential_AI.new('X')
+# p2 = Random_AI.new('O')
+p1 = Human.new('X')
+p2 = Human.new('O')
 
 game = Console_Game.new(p1, p2)
 

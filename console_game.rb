@@ -1,11 +1,11 @@
 require_relative 'board.rb'
-# require_relative 'human.rb'
-require_relative 'random_ai.rb'
-require_relative 'sequential_ai.rb'  
+require_relative 'human.rb'
+# require_relative 'random_ai.rb'
+# require_relative 'sequential_ai.rb'  
 
 class Console_Game
 
-	attr_accessor :board, :p1, :p2, :active_player
+	attr_accessor :board, :p1, :p2, :active_player, :move
 
 	def initialize(p1, p2)
 		@p1 = p1
@@ -29,13 +29,17 @@ class Console_Game
 	end
 
 	def get_move
-		active_player.get_move(board.ttt_board)
+		@move = active_player.get_move(board.ttt_board)
 	end
 
 	def update_position
-		move = get_move
 		marker = active_player.marker
-		board.update_position(move, marker)
+		if board.valid_position?(@move)
+			board.update_position(@move, marker)
+		else
+			puts "Invalid move, please choose again."
+			get_move
+		end
 	end
 
 	def change_player
