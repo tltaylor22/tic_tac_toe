@@ -1,7 +1,7 @@
 require_relative 'board.rb'
 # require_relative 'human.rb'
 require_relative 'random_ai.rb'
-require_relative 'sequential_ai.rb'
+require_relative 'sequential_ai.rb'  
 
 class Console_Game
 
@@ -50,24 +50,23 @@ class Console_Game
 	def check_winner
 		if board.winner?(p1.marker)
 			true
-			puts 'Congratulations Winner'
+			# puts 'Congratulations Winner'
 		elsif board.winner?(p2.marker)
 			true
-			puts 'Congratulations Winner'
+			# puts 'Congratulations Winner'
 		else
 			false
-			puts 'Play on!'
+			# puts 'Play on!'
 		end
 	end
 
 	def check_tie
 		if board.full_board?()
 			true
-			puts 'Cat game!'
 		else
 			false
 		end
-
+		
 	end
 
 

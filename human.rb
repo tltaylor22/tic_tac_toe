@@ -13,7 +13,7 @@ class Human
 		board = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
 		display_board(board)
 		print 'Enter 0-8 to choose your square'
-		move = gets.chomp.to_i
+		move = gets.chomp.to_i # "gets" player input  "chomps" off the newline and converts input to an integer
 	end
 
 end

@@ -34,21 +34,21 @@ class Board
 		end
 	end
 
-	def winner?(marker)
+	def winner?(marker) # 2D array of winning combinations
 	win_array = [[0, 1, 2], [3, 4, 5], [6, 7, 8], [0, 3,6], [1, 4, 7], [2, 5, 8], [0, 4, 8], [2, 4, 6]]
-	results = false
-		win_array.each do |win|
-			row = 0
-			win.each do |pos|
-				if ttt_board[pos] == marker
-					row += 1
-					if row == 3
+	results = false # set results to false by default 
+		win_array.each do |win| #iterates through outer array and then over each inner array.
+			row = 0 # set a counter
+			win.each do |pos| 
+				if ttt_board[pos] == marker # uses the index of each inner array element to index a position on the board.
+					row += 1 # if there is a match it adds to the counter "row"
+					if row == 3 # if row equals 3 results gets set to true because all 3 in a set matched.
 						results = true
-					end
+					end # nested loops. iterates over outer array and then iterates over each inner array. Count is reset to 0 for every inner array item because it is outside the inner loop.
 				end
 			end
 		end
-		results
+		results # calls the results which is false by default. Only true if a set of the three combos matches.
 	end					
 
 end
