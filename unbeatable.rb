@@ -21,17 +21,28 @@ class Unbeatable
 			[ttt_board[2], ttt_board[4],ttt_board[6]]
 					]
 
-				results = ttt_board.index('')
+				marker1 = 'X'
+				marker2 = 'O'
+				
+					if marker == marker1
+						opponent = marker2
+					else
+						opponent = marker1
+					end
+
+			results = ttt_board.index('')
 
 			board_position.each_with_index do |win_combo, index| #win_combo is the iteration through the array of winning arrays. index is the actual index position of the winning array ex. [1][1] would be the second array and the second position in that array based on 0,1,2 counting with arrays.
-				p win_combo
+
 				if win_combo.count(marker) == 2 && win_combo.count('') == 1
 					win_pos = win_combo.index('')
 					results = win_array[index][win_pos]
+				elsif win_combo.count(opponent) == 2 && win_combo.count('') == 1
+					win_pos = win_combo.index('')
+					results = win_array[index][win_pos]
 				else
-					results #= ttt_board.index('')
+					results
 				end
-				
 
 			end
 			results
