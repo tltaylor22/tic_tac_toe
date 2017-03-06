@@ -1,7 +1,7 @@
 require_relative 'board.rb'
 require_relative 'human.rb'
-# require_relative 'random_ai.rb'
-# require_relative 'sequential_ai.rb'  
+require_relative 'random_ai.rb'
+require_relative 'sequential_ai.rb'  
 
 class Console_Game
 
