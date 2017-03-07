@@ -2,10 +2,11 @@ require_relative 'board.rb'
 require_relative 'sequential_ai.rb'  
 require_relative 'random_ai.rb'
 require_relative 'human.rb'
+require_relative 'unbeatable_ai.rb'
 
 class Console_Game
 
-	attr_accessor :board, :p1, :p2, :active_player, :move, :player1input, :player2input #added last two today
+	attr_accessor :board, :p1, :p2, :active_player, :move, :player1input, :player2input
 
 	def initialize()
 		@p1 = choose_p1
@@ -75,7 +76,7 @@ class Console_Game
 	end
 
 	def choose_p1
-		puts "Select player X by entering 1-3. Human = 1; Random_Computer = 2; Sequential_Computer= 3"
+		puts "Select player X by entering 1-3. Human = 1; Random_Computer = 2; Sequential_Computer = 3; Unbeatable_Computer = 4"
 		@player1input = gets.chomp.to_i
 
 			if player1input == 1
@@ -84,8 +85,10 @@ class Console_Game
 				@p1 = Random_AI.new('X')
 			elsif player1input == 3
 				@p1 = Sequential_AI.new('X')
+			elsif player1input == 4
+				@p1 = Unbeatable_AI.new('X')
 			else
-				puts "Oops, please select 1, 2, or 3."
+				puts "Oops, please select 1, 2, 3, or 4."
 				choose_p1
 			end
 	end
@@ -100,8 +103,10 @@ class Console_Game
 				@p2 = Random_AI.new('O')
 			elsif player2input == 3
 				@p2 = Sequential_AI.new('O')
+			elsif player2input == 4
+				@p2 = Unbeatable_AI.new('O')
 			else
-				puts "Oops, please select 1, 2, or 3."
+				puts "Oops, please select 1, 2, 3, or 4."
 				choose_p2
 			end
 	end
