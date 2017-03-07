@@ -1,11 +1,11 @@
 require_relative 'console_game.rb' # this file will combine all the classes/functions and launch the game.
 
-p1 = Sequential_AI.new('X') # creating classes for each type of play
-p2 = Random_AI.new('O')
+# p1 = Sequential_AI.new('X') # creating classes for each type of play
+# p2 = Random_AI.new('O')
 # p1 = Human.new('X')
 # p2 = Human.new('O')
 
-game = Console_Game.new(p1, p2)
+game = Console_Game.new
 
 game.intro_ttt
 
@@ -20,7 +20,7 @@ end
 if game.check_winner
 	puts "#{game.active_player.marker} WINS!"
 else
-	puts "Cat game!"
+	puts "Cat game! Try Again?"
 
 end
 

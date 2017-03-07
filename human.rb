@@ -8,15 +8,7 @@ class Human
 		@marker = marker
 	end
 
-# I have to initially show the board to the player to know position and pass through the current board after each move
-	# def get_move(update_position)
-	# 	board = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
-	# 	display_board(board)
-	# 	puts 'Enter 0-8 to choose your square'
-	# 	move = gets.chomp.to_i # "gets" player input  "chomps" off the newline and converts input to an integer
-	# end
-
-	def get_move(update_position)
+def get_move(update_position)
 		puts 'Enter 0-8 to choose your square'
 		puts " 0 | 1 | 2 "
 		puts "-----------"
