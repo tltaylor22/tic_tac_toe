@@ -1,4 +1,4 @@
-class Unbeatable
+class Unbeatable_AI
 
 	attr_accessor :marker
 

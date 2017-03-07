@@ -19,14 +19,16 @@ class Console_Game
 	end
 
 	def display_board
+		puts "It's #{active_player.marker}'s turn."
+	 	puts "               "
+
 		puts " #{board.ttt_board[0]} | #{board.ttt_board[1]} | #{board.ttt_board[2]} "
 	 	puts "-----------"
 	 	puts " #{board.ttt_board[3]} | #{board.ttt_board[4]} | #{board.ttt_board[5]} "
 	 	puts "-----------"
 	 	puts " #{board.ttt_board[6]} | #{board.ttt_board[7]} | #{board.ttt_board[8]} "
 	 	puts "               "
-	 	puts "It's #{active_player.marker}'s turn."
-	 	puts "               "
+
 	end
 
 	def get_move
@@ -55,10 +57,8 @@ class Console_Game
 	def check_winner
 		if board.winner?(p1.marker)
 			true
-			# puts 'Congratulations Winner'
 		elsif board.winner?(p2.marker)
 			true
-			# puts 'Congratulations Winner'
 		else
 			false
 			
@@ -83,7 +83,7 @@ class Console_Game
 			elsif player1input == 2
 				@p1 = Random_AI.new('X')
 			elsif player1input == 3
-				@p1 = Sequential_ai.new('X')
+				@p1 = Sequential_AI.new('X')
 			else
 				puts "Oops, please select 1, 2, or 3."
 				choose_p1

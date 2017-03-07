@@ -1,12 +1,38 @@
-	def update_position
-		move = get_move
-		marker = active_player.marker
-		board.update_position(move, marker)
-	end
+# MINMAX USING GAME AND DEPTH TO CALCULATE A WIN USING POINTS SYSTEM AND TO KEEP THE GAME GOING TO THE END (DEPTH).
 
-	def get_move(update_position)
-		board = ["0", "1", "2", "3", "4", "5", "6", "7", "8"]
-		display_board(board)
-		puts 'Enter 0-8 to choose your square'
-		move = gets.chomp.to_i # "gets" player input  "chomps" off the newline and converts input to an integer
-	end
+def score(game, depth)
+    if game.win?(@player)
+        return 10 - depth
+    elsif game.win?(@opponent)
+        return depth - 10
+    else
+        return 0
+    end
+end
+
+def minimax(game, depth)
+    return score(game) if game.over?
+    depth += 1
+    scores = [] # an array of scores
+    moves = []  # an array of moves
+
+    # Populate the scores array, recursing as needed
+    game.get_available_moves.each do |move|
+        possible_game = game.get_new_state(move)
+        scores.push minimax(possible_game, depth)
+        moves.push move
+    end
+
+    # Do the min or the max calculation
+    if game.active_turn == @player
+        # This is the max calculation
+        max_score_index = scores.each_with_index.max[1]
+        @choice = moves[max_score_index]
+        return scores[max_score_index]
+    else
+        # This is the min calculation
+        min_score_index = scores.each_with_index.min[1]
+        @choice = moves[min_score_index]
+        return scores[min_score_index]
+    end
+end
