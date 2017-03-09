@@ -52,15 +52,20 @@ class TestUnbeatableFunction < Minitest::Test
 		player = Unbeatable_AI.new('O')
 		assert_equal(2, player.get_move(['O', 'O', ' ', ' ', ' ', 'X', ' ', ' ', 'X']))
 	end
-
-	def test_for_fork_1
+	
+	def test_O_fork_returns_O
+		player = Unbeatable_AI.new('O')
+		assert_equal(0, player.check_fork([' ', 'O', ' ', ' ', 'O', 'X', ' ', 'X', ' ']))
+	end
+	
+	def test_O_fork_returns_6
 		player = Unbeatable_AI.new('O')
 		assert_equal(6, player.check_fork([' ', 'X', ' ', ' ', 'O', 'X', ' ', 'O', ' ']))
 	end
 
-	def test_for_fork_2
+	def test_O_fork_returns_2
 		player = Unbeatable_AI.new('O')
-		assert_equal(0, player.check_fork([' ', 'O', ' ', ' ', 'O', 'X', ' ', 'O', ' ']))
+		assert_equal(2, player.check_fork(['X', ' ', ' ', ' ', ' ', ' ', 'O', 'X', 'O']))
 	end
 end
 
