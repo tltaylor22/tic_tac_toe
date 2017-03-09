@@ -8,27 +8,27 @@ class TestUnbeatableFunction < Minitest::Test
 		assert_equal('X', player.marker)
 	end
 
-	def test_win_at_2
+	def test_win_at_012_X
 		player = Unbeatable_AI.new('X')
 		assert_equal(2, player.get_move(['X', 'X', ' ', ' ', ' ', ' ', ' ', ' ', ' ']))
 	end
 
-	def test_win_at_8
+	def test_win_at_678
 		player = Unbeatable_AI.new('X')
 		assert_equal(8, player.get_move([' ', ' ', ' ', ' ', ' ', ' ', 'X', 'X', ' ']))
 	end
 
-	def test_win_at_4
+	def test_win_at_048
 		player = Unbeatable_AI.new('X')
 		assert_equal(4, player.get_move(['X', ' ', ' ', ' ', ' ', ' ', ' ', ' ', 'X']))
 	end
 
-	def test_no_win_x
+	def test_no_win_X
 		player = Unbeatable_AI.new('X')
 		assert_equal(1, player.get_move(['X', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ']))
 	end
 
-	def test_win_at_2
+	def test_win_at_012_O
 		player = Unbeatable_AI.new('O')
 		assert_equal(2, player.get_move(['O', 'O', ' ', ' ', ' ', ' ', ' ', 'X', ' ']))
 	end
@@ -48,11 +48,19 @@ class TestUnbeatableFunction < Minitest::Test
 		assert_equal(8, player.get_move([' ', ' ', 'O', ' ', ' ', 'O', ' ', 'X', ' ']))
 	end
 
-	def test_x_and_o_block
+	def test_X_and_O_block
 		player = Unbeatable_AI.new('O')
-		assert_equal(2, player.get_move(['O ', 'O ', ' ', ' ', ' ', 'X', ' ', ' ', 'X']))
+		assert_equal(2, player.get_move(['O', 'O', ' ', ' ', ' ', 'X', ' ', ' ', 'X']))
 	end
 
+	def test_for_fork_1
+		player = Unbeatable_AI.new('O')
+		assert_equal(6, player.check_fork([' ', 'X', ' ', ' ', 'O', 'X', ' ', 'O', ' ']))
+	end
 
+	def test_for_fork_2
+		player = Unbeatable_AI.new('O')
+		assert_equal(0, player.check_fork([' ', 'O', ' ', ' ', 'O', 'X', ' ', 'O', ' ']))
+	end
 end
 
