@@ -20,8 +20,12 @@ class Console_Game
 	end
 
 	def display_board
-		puts "It's #{active_player.marker}'s turn."
-	 	puts "               "
+		if check_winner == true || board.full_board?
+			puts "Game Over"
+		else
+			puts "It's #{active_player.marker}'s turn."
+		end
+	 	
 
 		puts " #{board.ttt_board[0]} | #{board.ttt_board[1]} | #{board.ttt_board[2]} "
 	 	puts "-----------"

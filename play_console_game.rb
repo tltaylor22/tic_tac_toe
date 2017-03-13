@@ -20,7 +20,7 @@ end
 if game.check_winner
 	puts "#{game.active_player.marker} WINS!"
 else
-	puts "Cat game! Try Again?"
+	puts "Cat Game!"
 
 end
 
