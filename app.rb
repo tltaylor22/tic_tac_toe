@@ -26,7 +26,17 @@ class TicTacToeApp < Sinatra::Base
 	get '/pickgame' do
 		intro = params[:intro]
 		name = params[:name]
-		game = params[:game_input]
+		game = params[:game_select]
 		erb :pickgame, locals: {intro: intro, name: name}
+	end
+
+	post '/pickgame' do
+		intro = params[:intro]
+		name = params[:name_input]
+		game = params[:game_select]
+		redirect '/game1?name=' + name
+	end
+
+	get '/game1' do
 	end
 end
