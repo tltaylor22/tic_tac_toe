@@ -1,0 +1,73 @@
+.headline {
+	color: black;
+	font-family: helvetica;
+	font-style: normal;
+	font-weight: bold;
+	text-align: center;
+	font-size: xx-large;
+}
+.subhead {
+	color: black;
+	font-family: helvetica;
+	font-style: italic;
+	font-weight: bold;
+	text-align: center;
+	font-size: large;
+}
+.bodycopy {
+	color: black;
+	font-family: helvetica;
+	font-style: normal;
+	font-weight: normal;
+	text-align: center;
+	font-size: regular;
+}
+.header {
+	position: absolute;
+	right: 0;
+	top: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: #42eef4;
+}
+
+.background {
+	position: absolute;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	background-color: white
+}
+.footer {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #42eef4;
+}
+/*.image {
+	background-image: url(/../images/lucknum.jpg);
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;*/
+
+}
+.center {
+	text-align: center;
+}
+
+
+/*.headline = a class
+#headline = a id*/
+/*NOTE: marv said nav bars are set to fixed vs. absolute so the scroll goes behind the nav bar*/
+
+/*background-attachment: fixed;
+	background-position: center;
+	width:900px;
+   height:300px;
+   margin:0;
+   padding:0;
+Sub my image size for width and height*/
